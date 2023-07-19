@@ -53,14 +53,14 @@ int compare_dates(struct Date date1, struct Date date2)
 
 int main()
 {
-	struct Date date1 = {15, 7, 2023};
-	struct Date date2 = {18, 7, 2023};
+	struct Date date1, date2;
 	int result;
 
-/*	date1 = printf("Please enter the first date: ");
-	scanf("%d", date1);
-	date2 = printf("Please enter the second date: ");
-	scanf("%d", date2);*/
+	date1 = printf("Please enter the first date (day month year): ");
+	scanf("%d %d %d", &date1.day, &date1.month, &date1.year);
+
+	date2 = printf("Please enter the second date (day month year): ");
+	scanf("%d %d %d", &date2.day, &date2.month, &date2.year);
 
 	result = compare_dates(date1, date2);
 	if (result == 1)

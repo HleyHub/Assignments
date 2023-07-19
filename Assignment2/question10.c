@@ -37,30 +37,32 @@ int main()
 {
 	union Shape shape;
 	int choice;
-	unsigned int radius;
+	unsigned int radius, length, width;
 	float area_c;
-	unsigned int length, width;
 	unsigned int area_r;
 
-	printf("Please enter a digit: 1 for circle and 2 for rectangle: ");
+	printf("Please enter a digit: 1 for circle or 2 for rectangle: ");
 	scanf("%d", &choice);
 
 	if (choice == 1)
 	{
-		printf("Please enter the radius of the circle (0-15): ");
-		scanf("%u", &shape.circle.radius);
+		printf("Please enter the radius of the circle: ");
+		scanf("%u", &radius);
 
+		shape.circle.radius = radius;
 		area_c = area_circle(shape.circle.radius);
 		printf("The area of the circle is: %.2f\n", area_c);
 	}
 	else if (choice == 2)
 	{
-		printf("Please enter the length of the rectangle (0-7): ");
-		scanf("%u", &shape.rectangle.length);
+		printf("Please enter the length of the rectangle: ");
+		scanf("%u", &length);
 	
-		printf("please enter the width of the rectangle (0-7): ");
-		scanf("%u", &shape.rectangle.width);
+		printf("please enter the width of the rectangle: ");
+		scanf("%u", &width);
 
+		shape.rectangle.length = length;
+		shape.rectangle.width = width;
 		area_r = area_rectangle(shape.rectangle.length, shape.rectangle.width);
 		printf("The area of the rectangle is: %u\n", area_r);
 	}

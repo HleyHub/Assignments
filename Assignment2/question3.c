@@ -16,25 +16,21 @@ int main()
 	int d;
 
 	// Initialize the members of each "Student" structure in the array
-	strcpy(students[0].name, "John");
-	students[0].rollNumber = 101;
-	students[0].marks = 85.5;
 
-	strcpy(students[1].name, "Emily");
-	students[1].rollNumber = 102;
-	students[1].marks = 78.0;
-
-	strcpy(students[2].name, "Michael");
-	students[2].rollNumber = 103;
-	students[2].marks = 92.3;
-
-	strcpy(students[3].name, "Sarah");
-	students[3].rollNumber = 104;
-	students[3].marks = 76.8;
-
-	strcpy(students[4].name, "David");
-	students[4].rollNumber = 105;
-	students[4].marks = 89.1;
+	for (d = 0; d < 5; d++)
+	{
+		printf("Please enter the details each student %d:\n", d + 1);
+		printf("Name: ");
+		scanf("%s", students[d].name);
+		
+		printf("Roll Number: ");
+		scanf("%d", &students[d].rollNumber);
+		
+		printf("Marks: ");
+		scanf("%f", &students[d].marks);
+		
+		printf("\n");
+	}
 
 	// Print the details of all students in the array
 	printf("Student Details:\n");

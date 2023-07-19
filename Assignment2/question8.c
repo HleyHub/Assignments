@@ -18,11 +18,16 @@ union Data
 int main()
 {
 	union Data data;
+	int input;
 
-	// Assign values to the bitfields
-	data.binary.bit1 = 1;
-	data.binary.bit2 = 2;
-	data.binary.bit3 = 3;
+	// Prompt the user to enter an integer value
+	printf("please enter an integer value: ");
+	scanf("%d", &input);
+
+	// Assign values to the bitfields using bitwise operations
+	data.binary.bit1 = (input >> 0) & 1;
+	data.binary.bit2 = (input >> 1) & 3;
+	data.binary.bit3 = (input >> 3) & 7;
 
 	// Print the union members
 	printf("Value: %d\n", data.value);

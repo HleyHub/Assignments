@@ -11,11 +11,16 @@ union Color
 int main()
 {
 	union Color color;
+	unsigned int rgb;
 
-	// Set the RGB values
-	color.red = 255;
-	color.green = 128;
-	color.blue = 64;
+	// Prompt the user to enter the RGB color value as an integer
+	printf("Please enter the RGB color value: ");
+	scanf("%u", &rgb);
+
+	// Extract the individual color components using bitwise operations
+	color.red = (rgb >> 16) & 0xFF;
+	color.green = (rgb >> 8) & 0xFF;
+	color.blue = rgb & 0xFF;
 
 	// Print the RGB values
 	printf("Red: %u\n", color.red);

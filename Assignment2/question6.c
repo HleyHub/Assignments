@@ -14,10 +14,15 @@ int main()
 	// Create a variable of type "Person"
 	struct Person person;
 
-	// Initialize the members of the structure "Person"
-	strcpy(person.name, "John");
-	person.age = 25;
-	person.height = 175.5;
+	// Prompt the user to enter the person's details
+	printf("Please enter the name: ");
+	scanf("%s", person.name);
+
+	printf("Please enter the age: ");
+	scanf("%d", &person.age);
+
+	printf("Please enter the height (in cm): ");
+	scanf("%f", &person.height);
 
 	// Print the details of the person
 	printf("Name: %s\n", person.name);
